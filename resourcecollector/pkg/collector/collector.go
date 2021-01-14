@@ -240,27 +240,3 @@ func convertToSiteNode(site typed.Site, node typed.SiteNode) *types.SiteNode {
 	siteNode.Nodes = append(siteNode.Nodes, node.Nodes...)
 	return siteNode
 }
-
-// initPodInformers init collector with podInformer
-//func (c *Collector) initPodInformers(stopCh <-chan struct{}) error {
-//	masterURL := config.DefaultString("master", "127.0.0.1:8080")
-//	kubeconfig := config.DefaultString("kubeconfig", "/var/run/kubernetes/admin.kubeconfig")
-//
-//	// init client
-//	cfg, err := clientcmd.BuildConfigFromFlags(masterURL, kubeconfig)
-//	if err != nil {
-//		return err
-//	}
-//
-//	client, err := clientset.NewForConfig(cfg)
-//	if err != nil {
-//		return err
-//	}
-//
-//
-//	c.InformerFactory = informers.NewSharedInformerFactory(client, 0)
-//	c.PodInformer = factory.NewPodInformer(client, 0)
-//	c.NextStack = internalqueue.MakeNextStackFunc(c.StackQueue)
-//	c.Client = client
-//	return nil
-//}
